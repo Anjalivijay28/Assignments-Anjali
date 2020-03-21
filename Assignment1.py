@@ -1,3 +1,7 @@
+
+#Assignment by Anjali
+#Date : 21 Mar 2020
+
 # Assignment 1
 list1 = [1,2,3,4,5,6,7,8,9,10,11,12,15,18,20,24,25,27,30,32,33]
 # count items divisible by 2,3,4,5,7:
