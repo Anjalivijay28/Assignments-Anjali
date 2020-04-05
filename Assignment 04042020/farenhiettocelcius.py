@@ -1,4 +1,4 @@
-#calculate farenhiet to celcius
+#calculate farenhiet to celcius and commit
 
 def conv(data1):
 

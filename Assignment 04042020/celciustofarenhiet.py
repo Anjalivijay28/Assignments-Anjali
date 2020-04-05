@@ -1,4 +1,4 @@
-#calculate celcius to farenhiet
+#calculate celcius to  and commited
 
 def conv(data1):
     data_con = (9.0/5.0)*data1 + 32
