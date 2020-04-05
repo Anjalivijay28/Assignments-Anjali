@@ -1,4 +1,4 @@
-# even or odd from list and commit
+# even or odd from list and commited
 
 def even_odd():
     list1 = [1, 4, 5, 2, 7, 4, 9, 12, 43]

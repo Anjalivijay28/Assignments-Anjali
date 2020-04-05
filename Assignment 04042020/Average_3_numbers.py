@@ -1,4 +1,4 @@
-# calculate the average of 3 numbers and commit
+# calculate the average of 3 numbers and commited
 
 
 def calc(data1,data2,data3):
