@@ -1,4 +1,4 @@
-#abstrct class calculator
+#abstract class calculator
 
 from abc import ABC,abstractmethod
 
