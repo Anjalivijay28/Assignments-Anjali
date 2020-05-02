@@ -34,8 +34,10 @@ class stringcalculator(Calculations):
 
     def mul(self):
         try:
-            if (self.str1.isdigit()== True and self.str2.isdigit()== True):
-                answer = int(self.str1) * int(self.str2)
+            # if (self.str1.isdigit()== True and self.str2.isdigit()== True):
+            if (self.str2.isdigit() == True):
+
+                answer = (self.str1) * int(self.str2)
 
             print("The multiplication of two strings is : ", answer)
 
