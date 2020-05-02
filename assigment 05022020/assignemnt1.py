@@ -14,16 +14,17 @@ Login with Invalid Credentials and capture the login failure message
 from selenium import webdriver
 import time
 
+
 class website():
 
     def __init__(self):
-        self.driver=webdriver.Chrome(executable_path="//Users/anjalinairandayil//PycharmProjects//Assignments-Anjali//drivers//chromedriver")
+        self.driver = webdriver.Chrome(
+            executable_path="//Users/anjalinairandayil//PycharmProjects//Assignments-Anjali//drivers//chromedriver")
         self.driver.get("https://opensource-demo.orangehrmlive.com/")
 
     def logintoapp(self):
-        self.driver.get("https://opensource-demo.orangehrmlive.com")
+        print("Login Started")
         self.driver.find_element_by_name("txtUsername").send_keys("admin")
-        print("Entered username")
         self.driver.find_element_by_name("txtPassword").send_keys("admin123")
         self.driver.find_element_by_name("Submit").click()
         try:
@@ -31,13 +32,18 @@ class website():
                 print("Logged in successfully")
         except:
             print("Invalid credentials")
+            return 1
+        print("Login Completed")
 
     def assignleave(self):
-        self.driver.find_element_by_css_selector("img[src='/webres_5e7b15c4882d04.47780062/orangehrmLeavePlugin/images/ApplyLeave.png']").click()
-        time.sleep(10)
+        print("Assign leave Started")
+        self.driver.find_element_by_css_selector(
+            "img[src='/webres_5e7b15c4882d04.47780062/orangehrmLeavePlugin/images/ApplyLeave.png']").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("assign-leave").is_displayed()):
-                print("Assign Leave Page is displayed ")
+                test1 = self.driver.find_element_by_xpath('//*[@id="assign-leave"]/div[1]/h1').text
+                print("The header is ", test1)
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
@@ -46,13 +52,17 @@ class website():
                 print("Dashboard Page is displayed")
         except:
             print("Text not found - try again")
+        print("Assign Leave Completed")
 
     def leavelist(self):
-        self.driver.find_element_by_css_selector("img[src='/webres_5e7b15c4882d04.47780062/orangehrmLeavePlugin/images/MyLeave.png']").click()
-        time.sleep(10)
+        print("Leave List Started")
+        self.driver.find_element_by_css_selector(
+            "img[src='/webres_5e7b15c4882d04.47780062/orangehrmLeavePlugin/images/MyLeave.png']").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("leave-list-search").is_displayed()):
-                print("Leave list page is displayed")
+                test2 = self.driver.find_element_by_xpath('//*[@id="leave-list-search"]/div[1]/h1').text
+                print("The header is ", test2)
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
@@ -61,13 +71,17 @@ class website():
                 print("Dashboard Page is displayed")
         except:
             print("Text not found - try again")
+        print("Leave list closed")
 
     def timesheet(self):
-        self.driver.find_element_by_css_selector("img[src='/webres_5e7b15c4882d04.47780062/orangehrmTimePlugin/images/MyTimesheet.png']").click()
-        time.sleep(10)
+        print("Time sheet Started")
+        self.driver.find_element_by_css_selector(
+            "img[src='/webres_5e7b15c4882d04.47780062/orangehrmTimePlugin/images/MyTimesheet.png']").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("employeeSelectForm").is_displayed()):
-                print("Timesheet page is displayed")
+                test3 = self.driver.find_element_by_xpath('//*[@id="content"]/div[1]/div[1]/h1').text
+                print("The header is ", test3)
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
@@ -76,19 +90,24 @@ class website():
                 print("Dashboard Page is displayed")
         except:
             print("Text not found - try again")
+        print("Time Sheet completed")
 
     def logout(self):
+        print("Logout Started")
         self.driver.find_element_by_id("welcome").click()
-        time.sleep(10)
+        time.sleep(15)
         self.driver.find_element_by_link_text("Logout").click()
         print("user logged out")
         self.driver.close()
-
+        print("Logout Completed")
 
 
 web = website()
-web.logintoapp()
-web.assignleave()
-web.leavelist()
-web.timesheet()
-web.logout()
+tst = web.logintoapp()
+if tst == 1:
+    print("Closing the test")
+else:
+    web.assignleave()
+    web.leavelist()
+    web.timesheet()
+    web.logout()
