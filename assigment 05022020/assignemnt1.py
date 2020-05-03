@@ -56,8 +56,7 @@ class website():
 
     def leavelist(self):
         print("Leave List Started")
-        self.driver.find_element_by_css_selector(
-            "img[src='/webres_5e7b15c4882d04.47780062/orangehrmLeavePlugin/images/MyLeave.png']").click()
+        self.driver.find_element_by_xpath('//*[@id="dashboard-quick-launch-panel-menu_holder"]/table/tbody/tr/td[2]/div/a/span').click()
         time.sleep(15)
         try:
             if (self.driver.find_element_by_id("leave-list-search").is_displayed()):
@@ -96,7 +95,7 @@ class website():
         print("Logout Started")
         self.driver.find_element_by_id("welcome").click()
         time.sleep(15)
-        self.driver.find_element_by_link_text("Logout").click()
+        self.driver.find_element_by_xpath('//*[@id="welcome-menu"]/ul/li[2]/a').click()
         print("user logged out")
         self.driver.close()
         print("Logout Completed")
