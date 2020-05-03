@@ -47,6 +47,7 @@ class website():
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("dashboard-quick-launch-panel-container").is_displayed()):
                 print("Dashboard Page is displayed")
@@ -65,6 +66,7 @@ class website():
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("dashboard-quick-launch-panel-container").is_displayed()):
                 print("Dashboard Page is displayed")
@@ -84,6 +86,7 @@ class website():
         except:
             print("Text not found - try again")
         self.driver.find_element_by_id("menu_dashboard_index").click()
+        time.sleep(15)
         try:
             if (self.driver.find_element_by_id("dashboard-quick-launch-panel-container").is_displayed()):
                 print("Dashboard Page is displayed")

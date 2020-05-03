@@ -18,7 +18,7 @@ class web():
         print("Entered password")
         self.driver.find_element_by_name("Submit").click()
         test = self.driver.find_element_by_xpath('//*[@id="spanMessage"]').text
-        print (test)
+        print ("The message is : ",test)
         # try:
         #     if self.driver.find_element_by_id("welcome").is_displayed():
         #         print("Logged in successfully")
